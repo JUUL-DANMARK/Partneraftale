@@ -96,7 +96,7 @@
                 </div>
 
                 <!-- Call to action -->
-                <div class="mx-auto flex justify-center text-white">
+                <div class="hidden mx-auto lg:flex justify-center text-white">
                     <div class="w-1/2 flex justify-around leading-6 text-white text-lg font-medium">
                         <a href="tel:+4539391111" class="font-semibold leading-6 text-white">39 39 11 11</a>
                         <div>•</div>
@@ -190,16 +190,16 @@
         </div>
 
         <!-- Pricing section -->
-        <div class="relative isolate mt-12 pt-24 border-t border-gray-200 bg-gray-100 px-6 sm:mt-32 sm:py-32 lg:px-8">
+        <div class="relative isolate mt-24 py-24 border-t border-gray-200 bg-gray-100 px-6 sm:mt-32 sm:py-32 lg:px-8">
             <div class="max-w-7xl mx-auto">
                 <div class="absolute inset-x-0 top-6 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
                     <div class="mx-auto aspect-[1155/678] w-[98.1875rem] bg-gradient-to-tr from-[#14b8a6] to-[#84cc16] opacity-30" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
                 </div>
-                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+                <div class="mx-auto max-w-2xl sm:text-center lg:max-w-4xl">
                     <h2 class="text-base font-semibold leading-7 text-lime-600">Priser</h2>
                     <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Den rigtige pris for dig</p>
                 </div>
-                <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">Qui iusto aut est earum eos quae. Eligendi est at nam aliquid ad quo reprehenderit in aliquid fugiat dolorum voluptatibus.</p>
+                <p class="mx-auto mt-6 max-w-2xl sm:text-center text-lg leading-8 text-gray-600">Qui iusto aut est earum eos quae. Eligendi est at nam aliquid ad quo reprehenderit in aliquid fugiat dolorum voluptatibus.</p>
                 <!-- Pricing v1 -->
                 <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
                     <div class="rounded-3xl p-8 ring-1 ring-gray-200 bg-white">
@@ -399,7 +399,7 @@
         </div>
 
         <!-- Testimonial section -->
-        <div class="relative isolate sm:pt-32">
+        <div class="relative isolate border-t border-gray-200 pt-24 sm:pt-32 sm:border-none">
             <svg class="absolute inset-0 -z-10 hidden h-full w-full stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] sm:block" aria-hidden="true">
                 <defs>
                     <pattern id="55d3d46d-692e-45f2-becd-d8bdc9344f45" width="200" height="200" x="50%" y="0" patternUnits="userSpaceOnUse">
@@ -437,6 +437,21 @@
                             </figcaption>
                         </figure>
                         <div class="space-y-8 xl:contents xl:space-y-0">
+                            <div class="space-y-8 xl:row-span-2 sm:hidden">
+                                <!-- Main testimonial - mobile only -->
+                                <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+                                    <blockquote class="text-gray-900">
+                                        <p>“Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.”</p>
+                                    </blockquote>
+                                    <figcaption class="mt-6 flex items-center gap-x-4">
+                                        <img class="h-10 w-10 rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=Brendon+Watkins&background=random" al="">
+                                        <div>
+                                            <div class="font-semibold">Brendon Watkins</div>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                            </div>
                             <div class="space-y-8 xl:row-span-2">
                                 <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
                                     <blockquote class="text-gray-900">
