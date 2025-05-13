@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="app.min.css" rel="stylesheet">
-    <title>JUUL Partneraftale</title>
-    <meta name="description" content="JUUL Partneraftale">
+    <title>JUUL » Partneraftale</title>
+    <meta name="description" content="Få optimalt overblik over dine medarbejdere med JUUL. Vi holder deres kompetencer og beviser opdaterede, så du kan fokusere på din forretning. Bliv partnerkunde i dag!">
     <meta name="robots" content="noindex">
-    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" />
 </head>
 <body>
 <div class="bg-white antialiased" x-data="{ menu: false }">
@@ -40,8 +40,8 @@
                 <div class="relative rounded-lg px-3 py-0.5 text-white bg-gray-50/10 ring-1 ring-white/20 hover:ring-white/30 active:bg-white/25">
                     <a href="#" class="flex gap-x-2 font-semibold tracking-tight text-white"><span class="absolute inset-0" aria-hidden="true"></span>Jeg vil gerne høre mere</a>
                 </div>
-                <a href="#features" class="font-semibold leading-6 text-white">Features</a>
-                <a href="#faq" class="font-semibold leading-6 text-white">FAQ</a>
+                <button type="button" @click="$refs.feature.scrollIntoView({ behavior: 'smooth' })" class="font-semibold leading-6 text-white">Features</button>
+                <button type="button" @click="$refs.faq.scrollIntoView({ behavior: 'smooth' })" class="font-semibold leading-6 text-white">FAQ</button>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <a href="https://partner.amujuul.dk" target="_blank" class="font-semibold leading-6 text-white">Log ind <span aria-hidden="true">&rarr;</span></a>
@@ -79,9 +79,9 @@
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
-                            <a @click="menu = ! menu" href="#hero" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">Partneraftale</a>
-                            <a @click="menu = ! menu" href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">Features</a>
-                            <a @click="menu = ! menu" href="#faq" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">FAQ</a>
+                            <a @click="menu = ! menu; $refs.hero.scrollIntoView({ behavior: 'smooth' })" href="#hero" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">Partneraftale</a>
+                            <button type="button" @click="menu = ! menu; $refs.feature.scrollIntoView({ behavior: 'smooth' })" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">Features</button>
+                            <button type="button" @click="menu = ! menu; $refs.faq.scrollIntoView({ behavior: 'smooth' })" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">FAQ</button>
                         </div>
                         <div class="py-6">
                             <a href="https://partner.amujuul.dk" target="_blank" class="-mx-3 flex gap-x-2 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100">Log ind <span aria-hidden="true">&rarr;</span></a>
@@ -92,7 +92,7 @@
         </div>
     </header>
 
-    <main>
+    <main x-ref="hero">
         <!-- Hero section -->
         <div class="relative isolate overflow-hidden bg-gray-900" id="hero">
             <img src="header.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Feature section -->
-        <div class="pt-28 sm:pt-32 lg:pt-36 xl:pt-48" id="features">
+        <div class="pt-28 sm:pt-32 lg:pt-36 xl:pt-48" x-ref="feature">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl sm:text-center">
                     <h2 class="text-base font-semibold leading-7 text-lime-600">Lad os klare alt det administrative</h2>
@@ -337,7 +337,7 @@
         </div>
 
         <!-- FAQ section -->
-        <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8" id="faq">
+        <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8" x-ref="faq">
             <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
                 <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">FAQ &mdash; Spørgsmål og svar</h2>
                 <dl x-data="{ active: 1 }" class="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -386,7 +386,7 @@
                                 type="button"
                                 x-on:click="expanded = ! expanded"
                                 :aria-expanded="expanded"
-                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
+                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-1" aria-expanded="false">
                                 <span class="text-base font-semibold leading-7">Kan jeg være Partner selvom jeg ikke er bosat på Sjælland?</span>
                                 <span class="ml-6 flex h-7 items-center">
                                     <svg x-show="! expanded" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -417,7 +417,7 @@
                                 type="button"
                                 x-on:click="expanded = ! expanded"
                                 :aria-expanded="expanded"
-                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
+                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-2" aria-expanded="false">
                                 <span class="text-base font-semibold leading-7">Hvor mange medarbejdere skal jeg have for at kunne være Partner hos JUUL</span>
                                 <span class="ml-6 flex h-7 items-center">
                                     <svg x-show="! expanded" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -448,7 +448,7 @@
                                 type="button"
                                 x-on:click="expanded = ! expanded"
                                 :aria-expanded="expanded"
-                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
+                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-3" aria-expanded="false">
                                 <span class="text-base font-semibold leading-7">Hvilket slags firma skal jeg have for at kunne være Partner hos JUUL?</span>
                                 <span class="ml-6 flex h-7 items-center">
                                     <svg x-show="! expanded" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -480,7 +480,7 @@
                                 type="button"
                                 x-on:click="expanded = ! expanded"
                                 :aria-expanded="expanded"
-                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
+                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-4" aria-expanded="false">
                                 <span class="text-base font-semibold leading-7">Hvordan tilmelder jeg mig/bliver jeg Partner hos JUUL?</span>
                                 <span class="ml-6 flex h-7 items-center">
                                     <svg x-show="! expanded" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -511,7 +511,7 @@
                                 type="button"
                                 x-on:click="expanded = ! expanded"
                                 :aria-expanded="expanded"
-                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
+                                class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-5" aria-expanded="false">
                                 <span class="text-base font-semibold leading-7">Kan jeg blive Partner hos JUUL hvis jeg aldrig har gået på jeres skole?</span>
                                 <span class="ml-6 flex h-7 items-center">
                                     <svg x-show="! expanded" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -623,7 +623,7 @@
                                 <h3 class="text-sm font-semibold leading-6 text-white">FAQ</h3>
                                 <ul role="list" class="mt-6 space-y-4">
                                     <li>
-                                        <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Spørgsmål og svar</a>
+                                        <button type="button" @click="$refs.faq.scrollIntoView({ behavior: 'smooth' })" class="text-sm leading-6 text-gray-300 hover:text-white">Spørgsmål og svar</button>
                                     </li>
                                 </ul>
                             </div>
